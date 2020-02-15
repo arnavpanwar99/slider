@@ -1,0 +1,57 @@
+@import "./../../sass/animations";
+
+$arrowBackground: #e9e9e9;
+$arrow: #020202;
+$arrowThickness: .3rem;
+
+.container{
+    display: flex;
+    flex-direction: row;
+    margin: 2rem auto;
+    justify-content: space-around;
+    width: fit-content;
+    &_swipeButton{
+        display: flex;
+        align-items: center;
+        z-index: 2;
+        &_box{
+            padding: 1.2rem;     //controls size of grey box
+            border-radius: 50%;
+            cursor: pointer;
+            margin: auto 1rem;
+            background-color: lighten(#9dc5c3, 10%);
+            //background-image: linear-gradient(315deg, lighten(#9dc5c3, 100%) 0%, #5e5c5c 74%);
+            &_actualLeft, &_actualRight{
+                border-bottom: $arrow $arrowThickness solid;
+                border-left: $arrow $arrowThickness solid;
+                padding: .5rem;                     //controls size of arrows
+                -webkit-transform: rotate(45deg);
+                border-radius: .25rem;
+                -moz-transform: rotate(45deg);
+                -o-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+            }
+            &_actualRight{
+                border-bottom: none;
+                border-top: $arrow $arrowThickness solid;
+                border-left: none;
+                border-right: $arrow $arrowThickness solid;
+            }
+        }
+    }
+}
+.left{
+    animation: bounceInLeft .1s ease-in;
+}
+.right{
+    animation: bounceInRight .1s ease-in;
+}
+
+
+.animateRight{
+    animation: bounceInRight .1s ease-in;
+}
+.animateLeft{
+    animation: bounceInLeft .1s ease-in;
+}
